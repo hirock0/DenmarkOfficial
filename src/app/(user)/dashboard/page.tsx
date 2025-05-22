@@ -94,20 +94,21 @@ const DashboardPage = () => {
   ];
 
   return (
-    <div className=" max-w-[1440px] w-11/12 mx-auto ">
-      <div className=" ">
+    <div className="bg-zinc-200/20">
+      <div className=" mt-5 mb-7 bg-white shadow-lg mx-2 rounded-md ">
         <HeadLineSlide headline={["This is a", "Thus sds", "dsfd  sad"]} />
       </div>
-
-      <div className=" w-full grid gap-6  max-lg:grid-cols-2 grid-cols-3 max-sm:grid-cols-1">
-        {cards?.map((card, index) => (
-          <OrderCard
-            key={index}
-            count={card.count}
-            title={card.title}
-            buttonText={card.buttonText}
-          />
-        ))}
+      <div className="  max-w-[1440px] w-[96%] mx-auto ">
+        <div className=" w-full grid gap-6  max-lg:grid-cols-2 grid-cols-3 max-sm:grid-cols-1">
+          {cards?.map((card, index) => (
+            <OrderCard
+              key={index}
+              count={card.count}
+              title={card.title}
+              buttonText={card.buttonText}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

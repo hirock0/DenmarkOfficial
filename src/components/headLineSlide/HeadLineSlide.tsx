@@ -1,8 +1,8 @@
 import Marquee from "react-fast-marquee";
 const HeadLineSlide = ({ headline }: any) => {
   return (
-    <div className=" w-full h-full py-5 px-5">
-      <div className=" bg-white py-2 rounded-md">
+    <div className=" w-full  h-full  ">
+      <div className=" bg-zinc-100/40  max-w-[1400px]  w-[98%] mx-auto py-2 rounded-md">
         <Marquee>
           <div className=" flex items-center text-2xl text-blue-500 gap-5">
             {headline?.map((item: any, index: any) => (
