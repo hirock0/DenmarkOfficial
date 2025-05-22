@@ -1,5 +1,5 @@
 import Marquee from "react-fast-marquee";
-const HeadLineSlide = ({ headline }: { headline: string[] | any }) => {
+const HeadLineSlide = ({ headline }: any) => {
   return (
     <div className=" w-full h-full py-5 px-5">
       <div className=" bg-white py-2 rounded-md">

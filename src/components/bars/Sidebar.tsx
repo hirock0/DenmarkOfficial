@@ -47,15 +47,15 @@ const Sidebar = () => {
                   Setting
                 </h2>
               }
-              {Settings?.map((item: any, index) => (
-                <div className="" key={index}>
+              {Settings?.map((itm: any, idx) => (
+                <div className="" key={idx}>
                   <Link
-                    href={item?.href}
+                    href={itm?.href}
                     className={`  text-[#707070]  my-[15px] px-[20px] rounded-md flex justify-between items-center`}
                   >
                     <div className="flex items-center gap-5">
-                      <span className="text-2xl ">{item?.icon}</span>
-                      <span className="">{item?.label}</span>
+                      <span className="text-2xl ">{itm?.icon}</span>
+                      <span className="">{itm?.label}</span>
                     </div>
                   </Link>
                 </div>
