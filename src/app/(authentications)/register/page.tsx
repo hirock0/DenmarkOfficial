@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState } from "react";
@@ -8,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import swal from "sweetalert";
 import Image from "next/image";
-
+import { IoFingerPrint } from "react-icons/io5";
 interface RegisterFormInputs {
   name: string;
   email: string;
@@ -67,7 +66,7 @@ const Register = () => {
           title: "Password not matched",
           icon: "warning",
         });
-        setLoader(false)
+        setLoader(false);
       } else {
         const response = await axios.post(`/pages/api/register`, info);
 
@@ -97,13 +96,22 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100/50">
       <form
         onSubmit={handleSubmit(onRegister)}
-        className="bg-white p-8 rounded-lg shadow-md w-full max-w-md"
+        className="bg-white p-8 rounded-lg shadow-md  w-[500px]"
       >
-        <h2 className="text-2xl font-semibold text-center mb-6">Register</h2>
-
+        <div className=" flex items-center justify-center text-center">
+          <div className=" space-y-2">
+            <div className=" flex items-center justify-center">
+              <IoFingerPrint size={80} className=" text-blue-500/90" />
+            </div>
+            <h1 className=" text-red-500 font-semibold tracking-[1px] text-[22px]">Welcome</h1>
+            <h1 className=" text-green-700 text-[18px]">
+              তথ্য দিয়ে অ্যাকাউন্ট তৈরি করুন
+            </h1>
+          </div>
+        </div>
         {/* Name */}
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-600">

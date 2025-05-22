@@ -6,7 +6,8 @@ import { useRouter } from "next/navigation"; // For navigation after login
 import Link from "next/link";
 import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import eye icons
 import { AiOutlineLoading } from "react-icons/ai"; // Import loading spinner icon
-import swal from "sweetalert"; // Import SweetAlert
+import swal from "sweetalert";
+import { IoFingerPrint } from "react-icons/io5";
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -49,20 +50,27 @@ const LoginPage = () => {
     }
   };
 
-
-
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full">
-        <h2 className="text-2xl font-bold text-center text-blue-600 mb-4">
-          Login
-        </h2>
-
+    <div className="flex items-center justify-center min-h-screen bg-gray-100/50">
+      <div className=" border border-slate-300 shadow-2xl bg-white w-[480px] px-12 py-14 rounded-lg  ">
+        <div className=" flex items-center justify-center text-center">
+          <div className=" space-y-2">
+            <div className=" flex items-center justify-center">
+              <IoFingerPrint size={85} className=" text-blue-500/90" />
+            </div>
+            <h1 className=" text-red-500 font-semibold tracking-[1px] text-[22px]">
+              Welcome
+            </h1>
+            <h1 className=" text-green-700 text-[18px]">
+              ইমেইল এবং পাসওয়ার্ড দিয়ে লগ ইন করুন
+            </h1>
+          </div>
+        </div>
         {error && (
           <div className="text-red-600 text-sm text-center mb-4">{error}</div>
         )}
 
-        <form onSubmit={handleLogin} className="space-y-4">
+        <form onSubmit={handleLogin} className=" mt-5 space-y-4">
           <div>
             <label
               htmlFor="email"
@@ -109,7 +117,7 @@ const LoginPage = () => {
           <div className="flex justify-between items-center">
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none disabled:bg-gray-400"
+              className="w-full bg-blue-600/90 text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none disabled:bg-gray-400"
               disabled={loading} // Disable the button while loading
             >
               {loading ? (
